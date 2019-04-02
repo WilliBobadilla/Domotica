@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+  <title>Domotica</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP" crossorigin="anonymous">
+     
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>
+
+<body style="text-align:center;">
+<h1> 
+    Controles de la casa 
+</h1>
+<div style="text-align:center;">
+<h1 id="Dormitorio"> Dormitorio:</h1>
+<button >
+    <a href="/0" style="text-decoration:none;">Encender</a>
+    
+</button>
+<button>
+        <a href="/1" style="text-decoration:none;">Apagar</a>
+        
+    </button>
+<br>
+<h1 id="Sala"> Sala: </h1>
+<button>
+    <a href="/2" style="text-decoration:none;">Encender</a>
+    
+</button>
+<button >
+        <a href="/3" style="text-decoration:none;">Apagar</a>
+        
+    </button>
+    <br>
+    <h1 id="Cocina">Cocina: </h1>
+    <button >
+        <a href="/4" style="text-decoration:none;">Encender</a>
+        
+    </button>
+    <button >
+            <a href="/5" style="text-decoration:none;">Apagar</a>
+            
+        </button>
+        <br>
+        <h1 id="Patio"> Patio:</h1>
+        <button >
+            <a href="/6" style="text-decoration:none;">Encender</a>
+            
+        </button>
+        <button>
+                <a href="/7" style="text-decoration:none;">Apagar</a>
+                
+            </button>
+</div>
+<h1 id="resultado"></h1>
+
+  <script>
+      
+      //var msg='{{msg}}';                         //recibimos los datos desde flask 
+      var json=JSON.parse('{{msg|tojson|safe}}') ;
+       document.getElementById("Dormitorio").innerHTML="Dormitorio: "+json.dormitorio ;
+       document.getElementById("Sala").innerHTML="Sala: "+json.sala;
+       document.getElementById("Cocina").innerHTML="Cocina: "+json.cocina;
+       document.getElementById("Patio").innerHTML="Cocina: "+json.patio;
+       
+  </script>         
+   <style type="text/css">
+    div button{
+        font-size:20px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+
+       
+        border-radius:20px;
+        width:140px;
+        height:90px;
+       }
+       body {
+ background-image: url("/static/fondo.jpg");
+ background-color: #cccccc;
+}
+  </style>
+
+
+
+</body>
+
+</html>
