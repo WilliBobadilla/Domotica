@@ -47,7 +47,7 @@ class Luces():
          suspende la ejecucion del programa durante los sleeps(), deberiamos de hacerlo con hilos 
     """
     
-    def __init__(self,ubicacion="Default",puerto):  #ubicacion y puerto a utilizar del gpio
+    def __init__(self,ubicacion="Default",puerto):
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
         self.puerto=puerto         #puerto del gpio a utilizar
 
@@ -57,7 +57,7 @@ class Luces():
     def apagar(self):
         gpio.output(self.puerto,False)  #apagamos el led 
 
-    def intermitente(self, cantidad_intermitencia=2, tiempo=0.5)  #no usado actualmente
+    def intermitente(self, cantidad_intermitencia=2, tiempo=0.5):  
         for a in range(cantidad_intermitencia):
             gpio.output(self.puerto,True)  #encendemos
             sleep(tiempo)                  #esperamos un tiempo
