@@ -35,7 +35,7 @@ gpio.setup(led3,gpio.OUT)
 gpio.setup(led4,gpio.OUT)
 
 class Luces():
-         
+       """  
         Clase para el manejo de luces
         Posee 2 atributos: 
            1. Ubicacion del led a controlar
@@ -45,7 +45,7 @@ class Luces():
             2. apagar()
             3. intermitente(cantidad_intermitencia=2, tiempo=0.5), con este metodo debemos de tener cuidado ya que 
          suspende la ejecucion del programa durante los sleeps(), deberiamos de hacerlo con hilos 
-
+    """
     
     def __init__(self,ubicacion="Default",puerto):  #ubicacion y puerto a utilizar del gpio
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
