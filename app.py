@@ -48,7 +48,7 @@ class Luces:
          suspende la ejecucion del programa durante los sleeps(), deberiamos de hacerlo con hilos 
     """
     
-    def __init__(self,ubicacion="Default",puerto):
+    def __init__(self,ubicacion,puerto):
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
         self.puerto=puerto         #puerto del gpio a utilizar
 
