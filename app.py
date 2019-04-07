@@ -29,10 +29,7 @@ led4=26
 
 gpio.setmode(gpio.BCM) 			# modo BCM de la raspberry pi
  
-gpio.setup(led1,gpio.OUT)       #configuramos los puertos conectados a los leds como salida
-gpio.setup(led2,gpio.OUT)
-gpio.setup(led3,gpio.OUT)
-gpio.setup(led4,gpio.OUT)
+
 
     
 class Luces:
@@ -51,6 +48,7 @@ class Luces:
     def __init__(self,ubicacion,puerto):
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
         self.puerto=puerto         #puerto del gpio a utilizar
+        gpio.setup(self.puerto,gpio.OUT)  #declaramos como salida al puerto declarado al instanciar el objeto
 
     def encender(self):
         gpio.output(self.puerto,True)   #encendemos el led  
@@ -77,10 +75,10 @@ luces4=Luces("Patio",led4)
 def index1(estado):         #recibimos el estado enviado por el cliente
     
     if estado==0:
-        msg[0]="Encendido"  #encendemos
+        msg[0]="Encendido"  #encendemos si recibimos un cero de parte del cliente
         luces1.encender()   
     elif estado==1:
-        msg[0]="Apagado"   #apagamos
+        msg[0]="Apagado"   #apagamos si recibimos un 1 de parte del cliente 
         luces1.apagar()
     elif estado==2:
         msg[1]="Encendido"
