@@ -12,7 +12,7 @@ a la hora de probar en la raspberry pi solo se debe de borrar los caracteres que
 
 
 
-#import RPi.GPIO as gpio  	  libreria para utilizar los puertos de entrada y salida
+import RPi.GPIO as gpio  	  libreria para utilizar los puertos de entrada y salida
 from time import sleep
 from flask import Flask, render_template  #libreria del server a utilizar, Flask
 
@@ -33,9 +33,9 @@ gpio.setup(led1,gpio.OUT)       #configuramos los puertos conectados a los leds 
 gpio.setup(led2,gpio.OUT)
 gpio.setup(led3,gpio.OUT)
 gpio.setup(led4,gpio.OUT)
-
+ 
 class Luces():
-       """  
+      """  
         Clase para el manejo de luces
         Posee 2 atributos: 
            1. Ubicacion del led a controlar
@@ -46,6 +46,7 @@ class Luces():
             3. intermitente(cantidad_intermitencia=2, tiempo=0.5), con este metodo debemos de tener cuidado ya que 
          suspende la ejecucion del programa durante los sleeps(), deberiamos de hacerlo con hilos 
     """
+    
     
     def __init__(self,ubicacion="Default",puerto):
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
