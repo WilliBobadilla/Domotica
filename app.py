@@ -16,7 +16,7 @@ import RPi.GPIO as gpio  	  #libreria para utilizar los puertos de entrada y sal
 from time import sleep
 from flask import Flask, render_template  #libreria del server a utilizar, Flask
 
-app = Flask(__name__)  #
+app = Flask(__name__)  #Instanciamos el objeto Flask
 
 msg=["Apagado", "Apagado ","Apagado","Apagado"]          #variable global para pasar mensajes del lado del cliente  
 
@@ -76,7 +76,7 @@ def index1(estado):         #recibimos el estado enviado por el cliente
     
     if estado==0:
         msg[0]="Encendido"  #encendemos si recibimos un cero de parte del cliente
-        luces1.encender()   
+        luces1.encender()   #utilizamos el metodo encender del objeto Luces
     elif estado==1:
         msg[0]="Apagado"   #apagamos si recibimos un 1 de parte del cliente 
         luces1.apagar()
@@ -106,7 +106,7 @@ def index1(estado):         #recibimos el estado enviado por el cliente
          "patio":msg[3]
 
     }                  #utilizado para enviar los estados de los controles 
-    return render_template('index.html',msg=dato)
+    return render_template('index.html',msg=dato)   #renderizamos la pagina y enviamos info del lado del cliente
 
 
 @app.route('/')
@@ -122,18 +122,6 @@ def inicio():
     return render_template('index.html',msg=dato)
 
 
-@app.route('/registro',methods = ['POST', 'GET'])
-def registro():
-   if request.method=='POST':   
-        try:
-            Id=request.form['Id']               #
-            nombre=request.form['inputName']    #
-            datos=[Id,nombre]                   # 
-        except:
-            mensaje = "Error realizando la inserccion"
-        finally:
-            return render_template('index.html',dato=js)
-            
 
 if __name__ == '__main__':
    app.run(debug = True)
