@@ -36,7 +36,7 @@ gpio.setup(led4,gpio.OUT)
 
     
 class Luces:
-       """  
+    """  
         Clase para el manejo de luces
         Posee 2 atributos: 
            1. Ubicacion del led a controlar
