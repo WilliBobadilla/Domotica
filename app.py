@@ -33,9 +33,10 @@ gpio.setup(led1,gpio.OUT)       #configuramos los puertos conectados a los leds 
 gpio.setup(led2,gpio.OUT)
 gpio.setup(led3,gpio.OUT)
 gpio.setup(led4,gpio.OUT)
- 
-class Luces():
-      """  
+
+    
+class Luces:
+       """  
         Clase para el manejo de luces
         Posee 2 atributos: 
            1. Ubicacion del led a controlar
@@ -46,7 +47,6 @@ class Luces():
             3. intermitente(cantidad_intermitencia=2, tiempo=0.5), con este metodo debemos de tener cuidado ya que 
          suspende la ejecucion del programa durante los sleeps(), deberiamos de hacerlo con hilos 
     """
-    
     
     def __init__(self,ubicacion="Default",puerto):
         self.ubicacion=ubicacion   # indicamos la ubicacion de la luz a controlar
