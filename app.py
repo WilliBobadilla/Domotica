@@ -32,7 +32,7 @@ gpio.setmode(gpio.BCM) 			# modo BCM de la raspberry pi
 
 
     
-class Luces:
+class Luces:                # esto es el docstring de la clase, seria como la documentacion
     """  
         Clase para el manejo de luces
         Posee 2 atributos: 
