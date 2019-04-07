@@ -12,7 +12,7 @@ a la hora de probar en la raspberry pi solo se debe de borrar los caracteres que
 
 
 
-import RPi.GPIO as gpio  	  libreria para utilizar los puertos de entrada y salida
+import RPi.GPIO as gpio  	  #libreria para utilizar los puertos de entrada y salida
 from time import sleep
 from flask import Flask, render_template  #libreria del server a utilizar, Flask
 
