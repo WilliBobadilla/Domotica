@@ -8,8 +8,8 @@ Se puede controlar cualquier tipo de dispositivos de mayor potencia como focos,
 flourescentes, etc. 
 
 Para el montaje del proyecto se necesitará de los siguientes pasos:
-       1. Instalación del framework flask mediante pip con el siguiente comando
-              a. pip3 install Flask , para la version de python 3
+	1. Instalación del framework flask mediante pip con el siguiente comando
+		a. pip3 install Flask , para la version de python 3
        2.  Descargar el código mediante el siguiente comando
               a. git clone https://github.com/WilliBobadilla/Domotica.git
        3.  Moverse al directorio donde se encuentra el archivo app.py
